@@ -16,6 +16,7 @@ public class Funcionario extends Pessoa {
     }
 
     @Override
+    @Deprecated
     public void confirmarPresenca() {
         // Bater o ponto
     }
