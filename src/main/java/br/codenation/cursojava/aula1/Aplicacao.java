@@ -1,11 +1,10 @@
 package br.codenation.cursojava.aula1;
 
-import br.codenation.cursojava.aula1.model.Calculadora;
 import br.codenation.cursojava.aula1.model.Customer;
-
 import br.codenation.cursojava.aula2.Cachorro;
-import java.lang.System;
+import br.codenation.cursojava.aula3.annotation.MyAnnotation;
 
+@MyAnnotation(number = 1, date = "18/04/2020")
 public class Aplicacao {
 
     public static int contador = 0;

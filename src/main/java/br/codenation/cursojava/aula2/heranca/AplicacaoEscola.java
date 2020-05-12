@@ -15,6 +15,8 @@ public class AplicacaoEscola {
         System.out.println(funcionario.tirarCopias(7));
         System.out.println(professor.tirarCopias(100));
 
+        aluno.confirmarPresenca();
+
     }
 
 }

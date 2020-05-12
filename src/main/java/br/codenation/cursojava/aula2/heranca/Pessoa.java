@@ -18,6 +18,7 @@ public abstract class Pessoa {
         return 0.10 * (double) qtd;
     }
 
+    @Deprecated(since = "1.8")
     public abstract void confirmarPresenca();
 
 }
