@@ -39,20 +39,10 @@ public class Declarative {
                 new User("Maria", Gender.FEMALE, 160)
         );
 
-        final Double sumLimitCardsMaleUsers = sumLimitCards(users, user -> !User.isFemale(user));
+        final Double sumLimitCardsMaleUsers = sumLimitCards(users, user -> user.gender == Gender.MALE);
         final Double sumLimitCardsFemaleUsers = sumLimitCards(users, user -> User.isFemale(user));
 
         System.out.println(sumLimitCardsMaleUsers);
         System.out.println(sumLimitCardsFemaleUsers);
-    }
-
-    private Double sumCard(List<User> users, boolean isFemale) {
-        double sum = 0;
-        for (User user : users) {
-            if (User.isFemale(user) == isFemale) {
-                sum += user.cardLimit;
-            }
-        }
-        return sum;
     }
 }

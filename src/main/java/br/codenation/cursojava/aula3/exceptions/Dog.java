@@ -30,7 +30,7 @@ public class Dog {
         return name;
     }
 
-    public void setName(String name) throws DogException {
+    public void setName(String name) throws DogInvalidNameException {
         if (name != null && name.trim().length() > 40) {
             throw new DogInvalidNameException();
         }

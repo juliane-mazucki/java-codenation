@@ -4,16 +4,16 @@ public class ExceptionApplication {
 
     public static void main(String[] args) {
 
-        // System.out.println(30 / 5);
+        //System.out.println(30 / 0);
 
-        // System.out.println(args[5]);
+        //System.out.println(args[0]);
 
         Integer a = null;
-        // System.out.println(a.toString());
+        //System.out.println(a.toString());
 
-        //catchExceptions(args);
+        catchExceptions(args);
 
-        //throwsException();
+        // throwsException();
 
     }
 
@@ -22,24 +22,28 @@ public class ExceptionApplication {
         try {
             System.out.println("Começou a execução");
 
-            System.out.println(30 / 6);
+            //System.out.println(30 / 0);
 
             //System.out.println(args[0]);
 
             Integer a = null;
-            System.out.println(a.toString());
-        } catch (ArrayIndexOutOfBoundsException | NullPointerException | ArithmeticException e) {
-            System.out.println("Caiu em Exception");
+            //System.out.println(a.toString());
+        } catch (ArithmeticException e) {
+            System.out.println("Caiu em ArithmeticException");
+            System.err.println(e.getStackTrace());
+        } catch (ArrayIndexOutOfBoundsException e) {
+            System.out.println("Caiu em ArrayIndexOutOfBoundsException");
             System.out.println(e.getMessage());
+        } catch (NullPointerException e) {
+            System.out.println("Caiu em NullPointerException");
+            e.printStackTrace();
         } finally {
             System.out.println("Terminou a execução");
         }
 
-        System.out.println("Retomou");
-
     }
 
-    private static void throwsException() throws DogException {
+    private static void throwsException() throws DogInvalidNameException {
         Dog dog = new Dog();
         dog.setAge(0);
         dog.setBreed("Labrador");

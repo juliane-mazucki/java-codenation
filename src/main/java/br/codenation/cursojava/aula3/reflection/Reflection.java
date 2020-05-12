@@ -1,10 +1,10 @@
 package br.codenation.cursojava.aula3.reflection;
 
-import br.codenation.cursojava.aula2.heranca.Funcionario;
 import br.codenation.cursojava.aula2.interfaces.MinhaInterface;
 import br.codenation.cursojava.aula3.exceptions.Cat;
 import br.codenation.cursojava.aula3.exceptions.Dog;
 import br.codenation.cursojava.aula3.exceptions.Run;
+
 import java.lang.annotation.Annotation;
 import java.lang.reflect.Constructor;
 import java.lang.reflect.Field;
@@ -72,7 +72,7 @@ public class Reflection {
             System.out.println();
             Class<MinhaInterface> funcionarioClass = MinhaInterface.class;
 
-            for (Annotation annotation: funcionarioClass.getDeclaredAnnotations()) {
+            for (Annotation annotation : funcionarioClass.getDeclaredAnnotations()) {
                 System.out.println(annotation);
             }
 

@@ -7,22 +7,11 @@ interface Operator {
     float calc(float number1, float number2);
 }
 
-class Sum implements Operator {
-
-    @Override
-    public float calc(float number1, float number2) {
-        return number1 + number2;
-    }
-}
-
 public class Calculator {
     public static void main(String[] args) {
         System.out.println(
-                calculate(15, 10, new Operator() {
-                    @Override
-                    public float calc(float number1, float number2) {
-                        return number1 + number2;
-                    }
+                calculate(15, 10, (number1, number2) -> {
+                    return number1 + number2;
                 })
         );
 
