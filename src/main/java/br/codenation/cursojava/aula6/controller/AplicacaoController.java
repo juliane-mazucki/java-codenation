@@ -10,8 +10,11 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestController;
+
+import java.util.List;
 
 @RestController
 @RequestMapping("/api")
@@ -43,6 +46,21 @@ public class AplicacaoController {
     @GetMapping("/funcionario")
     public Iterable findAllFuncionarios() {
         return funcionarioRepository.findAll();
+    }
+
+    @GetMapping("/cargo/funcionario")
+    public Iterable findFuncionariosByCargo(@RequestParam(name = "cargoId") Long cargoId) {
+
+       List<Funcionario> allByCargoNative = funcionarioRepository.findAllByCargoNative(cargoId);
+
+        Cargo cargo = new Cargo();
+        cargo.setId(cargoId);
+
+        List<Funcionario> allByCargo = funcionarioRepository.findAllByCargo(cargo);
+
+        Funcionario byCargo = funcionarioRepository.findFuncionarioByCargo(cargo);
+
+        return allByCargo;
     }
 
 }
