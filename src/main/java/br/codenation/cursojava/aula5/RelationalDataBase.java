@@ -12,12 +12,12 @@ public class RelationalDataBase {
         try {
 
             String url = "jdbc:postgresql://localhost:5432/";
-            String usuario = "postgres";
-            String senha = "postgres";
+            String user = "postgres";
+            String pass = "postgres";
 
             Class.forName("org.postgresql.Driver");
 
-            connection = DriverManager.getConnection(url, usuario, senha);
+            connection = DriverManager.getConnection(url, user, pass);
 
             statement = connection.createStatement();
             String sql = "SELECT * FROM cliente";
@@ -47,7 +47,7 @@ public class RelationalDataBase {
             statement.executeUpdate("UPDATE cliente SET idade = idade + 1");
 
             PreparedStatement preparedStatement = connection.prepareStatement("INSERT INTO cliente VALUES (?, ?, ?, ?, ?)");
-            preparedStatement.setInt(1, 222);
+            preparedStatement.setInt(1, 2);
             preparedStatement.setString(2, "Valdir");
             preparedStatement.setString(3, "Golf");
             preparedStatement.setInt(4, 59);
