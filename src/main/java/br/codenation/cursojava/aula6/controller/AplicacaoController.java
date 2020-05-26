@@ -51,16 +51,18 @@ public class AplicacaoController {
     @GetMapping("/cargo/funcionario")
     public Iterable findFuncionariosByCargo(@RequestParam(name = "cargoId") Long cargoId) {
 
-       List<Funcionario> allByCargoNative = funcionarioRepository.findAllByCargoNative(cargoId);
+        List<Funcionario> allByCargoNative = funcionarioRepository.findAllByCargoNative(cargoId);
 
         Cargo cargo = new Cargo();
         cargo.setId(cargoId);
 
         List<Funcionario> allByCargo = funcionarioRepository.findAllByCargo(cargo);
 
+        List<Funcionario> byCargo1 = funcionarioRepository.findByCargoOrderByNome(cargo);
+
         Funcionario byCargo = funcionarioRepository.findFuncionarioByCargo(cargo);
 
-        return allByCargo;
+        return byCargo1;
     }
 
 }

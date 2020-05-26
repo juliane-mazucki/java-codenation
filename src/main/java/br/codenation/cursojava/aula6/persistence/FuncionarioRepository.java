@@ -18,7 +18,7 @@ public interface FuncionarioRepository extends JpaRepository<Funcionario, Long> 
 
     Funcionario findFuncionarioByCargo(Cargo cargo);
 
-    List<Funcionario> findByCargo(Cargo cargo);
+    List<Funcionario> findByCargoOrderByNome(Cargo cargo);
 
     List<Funcionario> findByNomeLike(String nome);
 }
