@@ -1,7 +1,7 @@
-package br.codenation.cursojava.aula6.persistence;
+package br.codenation.cursojava.aula5.persistence;
 
-import br.codenation.cursojava.aula6.model.Cargo;
-import br.codenation.cursojava.aula6.model.Funcionario;
+import br.codenation.cursojava.aula5.model.Cargo;
+import br.codenation.cursojava.aula5.model.Funcionario;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;

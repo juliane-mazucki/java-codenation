@@ -1,4 +1,4 @@
-package br.codenation.cursojava.aula5;
+package br.codenation.cursojava.aula4;
 
 import java.sql.*;
 

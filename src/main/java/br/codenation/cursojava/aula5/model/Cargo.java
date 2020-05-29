@@ -1,4 +1,4 @@
-package br.codenation.cursojava.aula6.model;
+package br.codenation.cursojava.aula5.model;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;

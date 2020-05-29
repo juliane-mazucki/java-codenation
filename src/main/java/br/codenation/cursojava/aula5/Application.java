@@ -1,4 +1,4 @@
-package br.codenation.cursojava.aula6;
+package br.codenation.cursojava.aula5;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

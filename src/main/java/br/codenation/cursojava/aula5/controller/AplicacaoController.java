@@ -1,9 +1,9 @@
-package br.codenation.cursojava.aula6.controller;
+package br.codenation.cursojava.aula5.controller;
 
-import br.codenation.cursojava.aula6.model.Cargo;
-import br.codenation.cursojava.aula6.model.Funcionario;
-import br.codenation.cursojava.aula6.persistence.CargoRepository;
-import br.codenation.cursojava.aula6.persistence.FuncionarioRepository;
+import br.codenation.cursojava.aula5.model.Cargo;
+import br.codenation.cursojava.aula5.model.Funcionario;
+import br.codenation.cursojava.aula5.persistence.CargoRepository;
+import br.codenation.cursojava.aula5.persistence.FuncionarioRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.GetMapping;
