@@ -3,8 +3,17 @@ package br.codenation.cursojava.aula2;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * @author julianemazucki
+ * @version
+ *
+ */
 public class ListExamples {
 
+    /**
+     * Método prinicipal da classe
+     * @param args
+     */
     public static void main(String[] args) {
 
         List<Integer> allNumbers = new ArrayList<>();
@@ -40,6 +49,12 @@ public class ListExamples {
         return true;
     }
 
+    /**
+     * @deprecated dsgshgsd
+     * @throws Exception
+     * @param label askjfasfhk
+     * @param numbers djshghsdkjgh
+     */
     private static void printNumbers(String label, List<Integer> numbers) {
         System.out.println();
         System.out.println(label + ": ");
