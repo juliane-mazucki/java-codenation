@@ -3,12 +3,17 @@ package br.codenation.cursojava.aula7.rest.controller;
 import br.codenation.cursojava.aula7.rest.exceptions.EmployeeNotFoundException;
 import br.codenation.cursojava.aula7.rest.model.Employee;
 import br.codenation.cursojava.aula7.rest.repository.EmployeeRepository;
+import org.springframework.dao.EmptyResultDataAccessException;
+import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.util.List;
@@ -24,7 +29,7 @@ public class EmployeeController {
 
     // Aggregate root
 
-    @GetMapping("/employees")
+    @GetMapping(path = "/employees")
     List<Employee> all() {
         return repository.findAll();
     }
@@ -59,7 +64,13 @@ public class EmployeeController {
     }
 
     @DeleteMapping("/employees/{id}")
+    @ResponseStatus(HttpStatus.NO_CONTENT)
     void deleteEmployee(@PathVariable Long id) {
-        repository.deleteById(id);
+        try {
+            repository.deleteById(id);
+        } catch (EmptyResultDataAccessException e) {
+            throw new EmployeeNotFoundException(id);
+        }
     }
+
 }
