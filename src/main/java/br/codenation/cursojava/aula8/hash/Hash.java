@@ -9,16 +9,16 @@ import java.security.NoSuchAlgorithmException;
 public class Hash {
 
     public static void main(String[] args) {
-        String frase = "Quero gerar códigos hash desta mensagem.";
-        System.out.println(stringHexa(gerarHash(frase, "MD5")));
-        System.out.println(stringHexa(gerarHash(frase, "SHA-1")));
-        System.out.println(stringHexa(gerarHash(frase, "SHA-256")));
+        String phrase = "Quero gerar códigos hash desta mensagem.";
+        System.out.println(stringHexa(generateHash(phrase, "MD5")));
+        System.out.println(stringHexa(generateHash(phrase, "SHA-1")));
+        System.out.println(stringHexa(generateHash(phrase, "SHA-256")));
     }
 
-    public static byte[] gerarHash(String frase, String algoritmo) {
+    public static byte[] generateHash(String phrase, String algorithm) {
         try {
-            MessageDigest md = MessageDigest.getInstance(algoritmo);
-            md.update(frase.getBytes());
+            MessageDigest md = MessageDigest.getInstance(algorithm);
+            md.update(phrase.getBytes());
             return md.digest();
         } catch (NoSuchAlgorithmException e) {
             return null;
