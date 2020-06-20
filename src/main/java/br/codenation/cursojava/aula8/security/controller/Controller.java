@@ -5,8 +5,24 @@ import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 public class Controller {
-    @GetMapping("/test")
-    public String get(){
-        return "Result";
+
+    @GetMapping("/unauthenticated")
+    public String unauthenticated() {
+        return "unauthenticated";
+    }
+
+    @GetMapping("/adminAllowed")
+    public String admin() {
+        return "adminAllowed";
+    }
+
+    @GetMapping("/userAllowed")
+    public String user() {
+        return "userAllowed";
+    }
+
+    @GetMapping("/all")
+    public String all() {
+        return "all";
     }
 }
