@@ -1,4 +1,4 @@
-package br.codenation.cursojava.aula8.security;
+package br.codenation.cursojava;
 
 
 import org.springframework.boot.SpringApplication;
