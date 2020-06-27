@@ -17,7 +17,7 @@ public class Permission {
     private String name;
 
     @ManyToMany(mappedBy = "permissions")
-    private List<User> users;
+    private List<Users> users;
 
     public Long getId() {
         return id;
@@ -35,11 +35,11 @@ public class Permission {
         this.name = name;
     }
 
-    public List<User> getUsers() {
+    public List<Users> getUsers() {
         return users;
     }
 
-    public void setUsers(List<User> users) {
+    public void setUsers(List<Users> users) {
         this.users = users;
     }
 }

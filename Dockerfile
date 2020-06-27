@@ -1,7 +1,11 @@
-FROM node:5.2
+FROM openjdk:8u151-jre-alpine
 
-RUN npm install bower -g
+LABEL version="1.0"
 
-RUN npm cache clear
+COPY target/*.jar java-codenation.jar
 
-CMD [ “bash” ]
+VOLUME [ "/root" ]
+
+ENTRYPOINT [ "/usr/bin/java", "-jar", "java-codenation.jar"]
+
+
